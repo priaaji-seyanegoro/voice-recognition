@@ -4,7 +4,7 @@ const content = document.querySelector(".content");
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
-const grettings = ['Hallo Bos, Saya Harap Hari Mu Menyenangkan' , 'Hai Kak' , 'Oh Hai Kak']
+const grettings = ['Hallo Bos, Saya Harap Hari Mu Menyenangkan' , 'Hai Kak Apapun Yang terjadi tetap semangat ya' , 'Hallo Kak']
 
 recognition.onstart = function() {
     console.log("voice is actived , you can to microphone");
