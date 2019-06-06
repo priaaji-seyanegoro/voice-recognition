@@ -26,7 +26,7 @@ function readOutLoud(m){
     const speech = new SpeechSynthesisUtterance();
     speech.text = 'Maaf aku ga ngerti kalimat ini soal nya belum diajarin :(';
     
-    if(m.includes('halo') || m.includes('hai')){
+    if(m.includes('halo')){
         const finalText = grettings[Math.floor(Math.random() * grettings.length )];
         speech.text = finalText;
     }
