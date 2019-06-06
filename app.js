@@ -14,7 +14,7 @@ recognition.onresult = function (event) {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
     content.textContent = transcript;
-    readOutLoud(transcript);
+    readOutLoud(toLowerCase(transcript));
     console.log(event);
 }
 
