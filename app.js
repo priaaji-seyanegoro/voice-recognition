@@ -4,8 +4,6 @@ const content = document.querySelector(".content");
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
-const grettings = ['Hallo Bos, Saya Harap Hari Mu Menyenangkan' , 'Hai Kak Apapun Yang terjadi tetap semangat ya' , 'Hallo Kak']
-
 recognition.onstart = function() {
     console.log("voice is actived , you can to microphone");
 }
@@ -14,7 +12,7 @@ recognition.onresult = function (event) {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
     content.textContent = transcript;
-    readOutLoud(toLowerCase(transcript));
+    readOutLoud(transcript);
     console.log(event);
 }
 
@@ -24,13 +22,7 @@ btn.addEventListener("click" , () => {
 
 function readOutLoud(m){
     const speech = new SpeechSynthesisUtterance();
-    speech.text = 'Maaf aku ga ngerti kalimat ini soal nya belum diajarin :(';
-    
-    if(m.includes('halo')){
-        const finalText = grettings[Math.floor(Math.random() * grettings.length )];
-        speech.text = finalText;
-    }
-
+    speech.text = m;
     speech.volume = 1;
     speech.rate = 1;
     speech.pitch = 1;
