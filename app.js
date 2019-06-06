@@ -20,9 +20,9 @@ btn.addEventListener("click" , () => {
     recognition.start();
 });
 
-function readOutLoud(m){
+function readOutLoud(me){
     const speech = new SpeechSynthesisUtterance();
-    speech.text = m;
+    speech.text = me;
     speech.volume = 1;
     speech.rate = 1;
     speech.pitch = 1;
